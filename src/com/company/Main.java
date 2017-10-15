@@ -6,11 +6,12 @@ public static LinkedListStack_Queue nuevoList= new LinkedListStack_Queue();
     public static void main(String[] args) {
         nuevoList.printList();
         options();
+        nuevoList.printList();
 
 	// write your code here
     }
     public static void options() {
-        int quitLoop= 0;
+        int quitLoop = 0;
         do {
 
             System.out.println("enter command:");
@@ -21,30 +22,33 @@ public static LinkedListStack_Queue nuevoList= new LinkedListStack_Queue();
             System.out.println("Type\"undo\" to add back removed string.");
             System.out.println("Type\"quit\" to exit program.");
 
-            Scanner scan= new Scanner(System.in);
-            String command= scan.nextLine();
-            command= command.toUpperCase();
+            Scanner scan = new Scanner(System.in);
+            String command = scan.nextLine();
+            command = command.toUpperCase();
 
-            switch(command) {
+            switch (command) {
                 case "ADD":
                     nuevoList.push();
                     break;
                 case "COPY":
                     nuevoList.copy();
-                case"DELETE":
+                case "DELETE":
                     nuevoList.remove();
                     break;
-                case"UNDO":
+                case "UNDO":
                     nuevoList.undo();
                     break;
-                case"QUIT":
+                case "QUIT":
                     System.out.println("Ending process.");
                     quitLoop++;
                     break;
-                    default:
-                        System.out.println("Enter valid number.");
+                default:
+                    System.out.println("Enter valid number.");
+                    continue;
             }
 
-        }while (quitLoop==0);
+            nuevoList.printList();
+        } while (quitLoop == 0);
+
     }
 }

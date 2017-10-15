@@ -9,6 +9,8 @@ public class LinkedListStack_Queue {
     public void push() {
         System.out.println("enter String: ");
         String userIn = scan.nextLine();
+        stack_Queue.add(userIn);
+
 
     }
     public  void setAddCopy(String userIn) {
@@ -43,6 +45,7 @@ public class LinkedListStack_Queue {
     }
     public void printList() {
         System.out.println(stack_Queue);
+
     }
 
 }
